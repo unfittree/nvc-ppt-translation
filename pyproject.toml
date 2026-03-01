@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ppt-translation"
+version = "0.1.0"
+description = "Translate PowerPoint (.pptx) files from English to Chinese."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "python-pptx>=0.6.23",
+  "deep-translator>=1.11.4",
+  "hanziconv>=0.3.2",
+]
+
+[project.scripts]
+ppt-translate = "ppt_translation.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
